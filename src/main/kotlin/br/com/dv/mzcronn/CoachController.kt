@@ -9,7 +9,7 @@ class CoachController(private val coachService: CoachService) {
 
     @GetMapping("/coaches")
     fun listCoaches(): ModelAndView {
-        val coaches = coachService.fetchCoaches()
+        val coaches = coachService.getCoaches()
 
         return ModelAndView("coaches").apply {
             addObject("coaches", coaches)
