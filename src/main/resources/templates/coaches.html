@@ -11,7 +11,15 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="mb-4">Coaches – Page 1</h1>
+    <h1 class="mb-3">Coaches – Page 1</h1>
+    <form action="/coaches" method="get">
+        <div class="mb-3">
+            <label for="nSelect" class="form-label text-white">n: </label>
+            <select id="nSelect" name="n" class="form-select" onchange="this.form.submit()">
+                <option th:each="i : ${#numbers.sequence(1, 13)}" th:value="${i}" th:text="${i}" th:selected="${i} == ${n}"></option>
+            </select>
+        </div>
+    </form>
     <div class="row">
         <div th:each="coach : ${coaches}" class="col-md-4">
             <div class="card coach-card">

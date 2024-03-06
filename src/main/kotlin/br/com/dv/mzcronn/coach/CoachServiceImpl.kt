@@ -10,17 +10,27 @@ class CoachServiceImpl(private val client: MainClient, private val parser: Coach
 
     private val log by logger()
 
-    private var coachesCache: List<Coach> = listOf()
+    private val coachesCache: MutableMap<Int, List<Coach>> = mutableMapOf()
 
-    override fun getCoaches(): List<Coach> {
-        return coachesCache
-    }
+    override fun getCoachesByClass(n: Int): List<Coach> = coachesCache[n] ?: listOf()
 
     @Scheduled(fixedRate = 150000)
     fun updateCoaches() {
-        val html = client.getCoachesHtml()
-        coachesCache = parser.parse(html)
-        log.info("Coaches updated: $coachesCache")
+        (1..13).forEach { n ->
+            try {
+                val html = client.getCoachesHtml(n)
+                coachesCache[n] = parser.parse(html)
+
+                log.info("""
+                    |Updated cl_$n coaches:
+                    |${coachesCache[n]}
+                """.trimMargin())
+
+                Thread.sleep(2000)
+            } catch (e: InterruptedException) {
+                log.warning("Thread interrupted while updating cl_$n coaches")
+            }
+        }
     }
 
 }
