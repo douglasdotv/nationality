@@ -3,13 +3,10 @@ package br.com.dv.mzcronn
 import org.springframework.stereotype.Service
 
 @Service
-class CoachService {
+class CoachService(private val client: MainClient, private val parser: CoachParser) {
 
     fun fetchCoaches(): List<Coach> {
-        return listOf(
-            Coach("John Doe", "Singapore"),
-            Coach("Neymar", "Denmark"),
-        )
+        return client.getCoachesHtml().let { parser.parse(it) }
     }
 
 }
