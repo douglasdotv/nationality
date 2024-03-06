@@ -1,4 +1,4 @@
-package br.com.dv.mzcronn
+package br.com.dv.mzcronn.coach
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping

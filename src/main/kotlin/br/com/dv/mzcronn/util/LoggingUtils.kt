@@ -1,4 +1,4 @@
-package br.com.dv.mzcronn
+package br.com.dv.mzcronn.util
 
 import java.util.logging.Logger
 

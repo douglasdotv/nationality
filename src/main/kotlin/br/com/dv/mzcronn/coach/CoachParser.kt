@@ -1,4 +1,4 @@
-package br.com.dv.mzcronn
+package br.com.dv.mzcronn.coach
 
 import org.jsoup.Jsoup
 import org.springframework.stereotype.Component

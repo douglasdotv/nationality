@@ -1,4 +1,4 @@
-package br.com.dv.mzcronn
+package br.com.dv.mzcronn.openfeign
 
 import feign.RequestInterceptor
 import org.springframework.beans.factory.annotation.Value

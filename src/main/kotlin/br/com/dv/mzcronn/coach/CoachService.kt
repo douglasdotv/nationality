@@ -1,5 +1,7 @@
-package br.com.dv.mzcronn
+package br.com.dv.mzcronn.coach
 
+import br.com.dv.mzcronn.openfeign.MainClient
+import br.com.dv.mzcronn.util.logger
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
 
