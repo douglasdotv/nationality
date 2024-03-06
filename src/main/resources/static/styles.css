@@ -1,0 +1,18 @@
+body {
+    background-color: #00203f;
+}
+
+.coach-card {
+    margin-bottom: 20px;
+    background-color: #004175;
+    color: #ff6700;
+}
+
+.coach-info, .card-title, h1 {
+    color: #ff6700;
+    font-size: 18px;
+}
+
+h1 {
+    color: #ff6700;
+}
