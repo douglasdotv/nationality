@@ -16,3 +16,14 @@ body {
 h1 {
     color: #ff6700;
 }
+
+body.-background {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.v-text {
+    color: #ff91af;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
