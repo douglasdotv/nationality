@@ -1,6 +1,7 @@
 package br.com.dv.mzcronn.mrequest
 
 import br.com.dv.mzcronn.util.logger
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
@@ -19,6 +20,11 @@ class MRequestController(private val service: MRequestService) {
         log.info("Received data: $data")
         service.saveRequest(data)
         return CONFIRMATION
+    }
+
+    @GetMapping("/receive")
+    fun receiveData(): String {
+        return "Hello"
     }
 
 }
