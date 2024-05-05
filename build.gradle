@@ -37,7 +37,8 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.jsoup:jsoup:1.17.2'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'com.azure:azure-data-tables'
+    implementation group: 'com.microsoft.azure', name: 'azure-spring-boot-bom', version: '2.3.5', ext: 'pom'
+    implementation group: 'com.azure', name: 'azure-data-tables', version: '12.4.0'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
@@ -49,7 +50,7 @@ dependencies {
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
-        mavenBom "com.azure.spring:azure-spring-boot-bom:3.9.0"
+
     }
 }
 
