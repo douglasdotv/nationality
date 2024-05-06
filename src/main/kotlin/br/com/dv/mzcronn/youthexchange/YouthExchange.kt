@@ -12,6 +12,8 @@ data class YouthExchange(
     val lp: Int,
     val firstLpSkill: String,
     val secondLpSkill: String,
+    val trainingSpeed: Int,
     val totalBalls: String,
-    val owner: String
+    val owner: String,
+    val stats: Map<String, Int>
 )

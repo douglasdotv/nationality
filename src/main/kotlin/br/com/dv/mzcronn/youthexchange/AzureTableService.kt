@@ -33,8 +33,13 @@ class AzureTableService(
             .addProperty("lp", data.lp)
             .addProperty("firstLpSkill", data.firstLpSkill)
             .addProperty("secondLpSkill", data.secondLpSkill)
+            .addProperty("trainingSpeed", data.trainingSpeed)
             .addProperty("totalSkillBalls", data.totalBalls)
             .addProperty("owner", data.owner)
+
+        data.stats.forEach { (skill, value) ->
+            entity.addProperty(skill, value)
+        }
 
         tableClient.upsertEntity(entity)
         return entity
